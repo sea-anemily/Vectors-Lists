@@ -1,0 +1,72 @@
+---
+title: "Lists"
+---
+
+```{r setup}
+library(tidyverse)
+library(repurrrsive)
+library(broom)
+names(sw_people) <- sw_people %>% map_chr("name")
+```
+
+# Lists
+
+## Your Turn 1
+
+Run the code below, which displays a list. What do you see? #comment the code to indicate what each code line does.
+
+```{r}
+sw_people %>% head(3) #comment
+sw_people$`Luke Skywalker` #comment
+sw_people[[2]] #comment
+```
+
+## Quiz
+What does `abs()` do for vectors vs. lists?
+
+
+```{r}
+vec <- c(-2, -1, 0)
+lst <- list(-2, -1, 0)
+
+abs(vec)
+abs(lst)
+```
+
+## Your Turn 2
+
+Who was taller Anakin Skywalker or Darth Vader? 
+Use the RStudio Viewer to find the answer (in cm).
+Extract the code to answer the question and copy/paste it here
+
+*Hint: View() sw_people*
+
+```{r}
+
+```
+
+## Your Turn 3
+
+Here are two subsetting commands. Do they return the same values? Run the code chunks below to confirm. #comment the code to indicate what each chunk does
+
+```{r}
+a_list <- list(num = c(8, 9), 
+               log = TRUE,    
+               cha = c("a", "b", "c"))
+```
+
+```{r}
+a_list["num"] #comment
+```
+
+```{r}
+a_list[["num"]] #comment
+```
+
+
+Take Aways
+
+* Use `View()` to inspect lists
+* Use `[[ ]]`, or `$` to extract values from lists
+* Lists can be a column in a data frame
+* Tables are an organizational structure that you can manipulate.
